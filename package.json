@@ -1,0 +1,32 @@
+{
+  "name": "",
+  "description": "",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-typescript": "^7.21.4",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "babel-jest": "^29.5.0",
+    "eslint": "^8.38.0",
+    "jest": "^29.5.0",
+    "rimraf": "^5.0.0",
+    "typedoc": "^0.24.4",
+    "typedoc-plugin-markdown": "^3.15.1",
+    "typescript": "^5.0.4"
+  },
+  "scripts": {
+    "build": "yarn test && rimraf ./dist && tsc && yarn docs",
+    "test": "rimraf ./coverage && jest",
+    "docs": "rimraf ./docs && typedoc --plugin typedoc-plugin-markdown --hideBreadcrumbs ./src/index.ts"
+  }
+}
